@@ -40,7 +40,7 @@ const Home = () => {
               <span>•</span>
               <span>AI/ML Enthusiast</span>
               <span>•</span>
-              <span>React Native</span>
+              <span>Android IOS Developer</span>
             </div>
           </div>
 
