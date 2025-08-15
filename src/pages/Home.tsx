@@ -2,8 +2,18 @@ import { ArrowRight, Download, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import profilePic from "../assests/width_882.webp";
+import resumePdf from '../assests/sujalRaikarResume.pdf';
 
 const Home = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = resumePdf;
+    link.setAttribute('download', 'SujalRaikar_Resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="container mx-auto text-center space-y-8">
@@ -61,7 +71,7 @@ const Home = () => {
             </Button>
           </Link>
           
-          <Button variant="outline" className="btn-ghost group">
+          <Button variant="outline" className="btn-ghost group" onClick={handleDownloadCV}>
             <Download className="mr-2 w-5 h-5" />
             Download CV
           </Button>
